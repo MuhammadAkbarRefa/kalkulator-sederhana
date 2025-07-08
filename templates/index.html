@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Web Python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <h1>🐍 Kalkulator Web dengan Python</h1>
+        
+        <form method="post" action="/">
+            <div class="display-area">
+                <input type="text" name="expression" id="display" value="{{ expression or '' }}" autocomplete="off">
+            </div>
+
+            <div class="result-area">
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% elif result is not none %}
+                    <p class="result">= {{ result }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="buttons">
+                <button type="button" onclick="addToDisplay('(')">(</button>
+                <button type="button" onclick="addToDisplay(')')">)</button>
+                <button type="button" class="operator" onclick="clearDisplay()">C</button>
+                <button type="button" class="operator" onclick="deleteLast()">DEL</button>
+                <button type="button" onclick="addToDisplay('7')">7</button>
+                <button type="button" onclick="addToDisplay('8')">8</button>
+                <button type="button" onclick="addToDisplay('9')">9</button>
+                <button type="button" class="operator" onclick="addToDisplay('/')">÷</button>
+                <button type="button" onclick="addToDisplay('4')">4</button>
+                <button type="button" onclick="addToDisplay('5')">5</button>
+                <button type="button" onclick="addToDisplay('6')">6</button>
+                <button type="button" class="operator" onclick="addToDisplay('*')">×</button>
+                <button type="button" onclick="addToDisplay('1')">1</button>
+                <button type="button" onclick="addToDisplay('2')">2</button>
+                <button type="button" onclick="addToDisplay('3')">3</button>
+                <button type="button" class="operator" onclick="addToDisplay('-')">−</button>
+                <button type="button" onclick="addToDisplay('0')">0</button>
+                <button type="button" onclick="addToDisplay('.')">.</button>
+                <button type="submit" class="equal">=</button>
+                <button type="button" class="operator" onclick="addToDisplay('+')">+</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+
+        function addToDisplay(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = '';
+        }
+
+        function deleteLast() {
+            display.value = display.value.slice(0, -1);
+        }
+    </script>
+
+    <footer>
+        <p>
+            Copyright &copy; {{ current_year }} - 
+            <a href="https://github.com/nama-anda" target="_blank">Muhammad Akbar Refa Putra</a>
+        </p>
+    </footer>
+</body>
+</html>

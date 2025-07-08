@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    flex-direction: column; /* Perbaikan di sini */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.calculator-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 340px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.display-area input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    font-size: 2em;
+    text-align: right;
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.result-area {
+    min-height: 40px;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.result {
+    color: #28a745;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 0.8em;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 65px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #e2e6ea;
+}
+
+button.operator {
+    background-color: #ffc107;
+    color: white;
+}
+
+button.operator:hover {
+    background-color: #e0a800;
+}
+
+button.equal {
+    grid-column: span 1;
+    background-color: #007bff;
+    color: white;
+}
+
+button.equal:hover {
+    background-color: #0056b3;
+}
+
+/* Styling untuk Footer */
+footer {
+    margin-top: 30px; /* Memberi jarak dari kalkulator */
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+}
+
+footer a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
